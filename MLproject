@@ -1,0 +1,10 @@
+name: traffic_congestion_project
+environment: requirements.txt
+entry_points:
+  clean_data:
+    # Define parameters your script can take
+    parameters:
+      raw_data_parent_path: {type: string, default: "data/raw/"}
+      clean_data_final_path: {type: string, default: "data/processed/cleaned.csv"}
+    # This is the actual command that will be executed
+    command: "python scripts/01_clean_data.py --input {raw_data_parent_path} --output {clean_data_final_path}"
